@@ -6,7 +6,8 @@
     .daughter-window [navbar] .grid-navbar-container p span {font-size: 1.2rem;}
     [custom-coffe] .custom-container .custom-header, [card-section] .card-section-header,.background-image .main-image-text, [expectation-part] .main-expectation-header {font-size: 2.7rem;}
     [expectation-part] .content-container .text-container {gap:10%;}
-    [expectation-part] .content-container .text-container section > p {font-size:2rem;}
+    [contact-part] header,
+    [expectation-part] .content-container .text-container section > p  {font-size:2rem;}
     .father-window {margin-top: 0%;}
     [card-section] .card-section-subtext, [custom-coffe] .custom-container .custom-subtext, [expectation-part] .content-container .text-container section span {font-size: 1.1rem;}
     .content-container .text-container section > p {font-size: 1.8rem;}
@@ -34,7 +35,8 @@
 /* max w - 1280px */
 @media (max-width: 1280px) {
     .daughter-window .grid-navbar-container p {font-size: 0.9rem;}
-    .background-image .main-image-text {font-size: 1.7rem;}
+    [contact-part] header,
+    .background-image .main-image-text  {font-size: 1.7rem;}
     [custom-coffe] .custom-container .custom-header, [card-section] .card-section-header, [expectation-part] .main-expectation-header {font-size: 2rem;}
     .card-container .card #card-text {font-size: 1.2rem;}
     .content-container .text-container section > p {font-size: 1.1rem;}
@@ -63,7 +65,7 @@
     [custom-coffe] .custom-container .custom-subtext, [card-section] .card-section-subtext, [custom-coffe].button-container .custom-button, .card-container .card #card-text 
     {font-size: .7rem;}
 
-    [custom-coffe] .custom-container .custom-header, [card-section] .card-section-header, [expectation-part] .main-expectation-header 
+    [custom-coffe] .custom-container .custom-header, [card-section] .card-section-header, [expectation-part] .main-expectation-header ,[contact-part] header
     {font-size: 1.5rem;}
     
     .card-container .card #card-text, .content-container .text-container section span {font-size: 0.9rem;}
@@ -78,9 +80,10 @@
 /* max w - 768px */
 @media(max-width:768px) {
     [custom-coffe] .custom-container .custom-subtext, [card-section] .card-section-subtext {font-size: 0.5rem;}
-    [custom-coffe] .custom-container .custom-header, [card-section] .card-section-header, [image-part] .hide-image-window .hide-image-header{font-size: 1.3rem;}
-    [custom-coffe] .custom-container .button-container .custom-button, .card-container .card #card-text, [card-section] .card-container .card span, [card-section] .undercard-container, [image-part] .hide-image-window .hide-image-subtext, .content-container .text-container section span {font-size: 0.7rem;}
+    [custom-coffe] .custom-container .custom-header, [card-section] .card-section-header, [image-part] .hide-image-window .hide-image-header, [contact-part] .contact-header{font-size: 1.3rem;}
+    [custom-coffe] .custom-container .button-container .custom-button, .card-container .card #card-text, [card-section] .card-container .card span, [card-section] .undercard-container, [image-part] .hide-image-window .hide-image-subtext, .content-container .text-container section span, [contact-part] .contact-subtext {font-size: 0.7rem;}
     [expectation-part] .content-container .text-container section > p {font-size: 1rem;}
+
    
    
     .content-container .text-container section .hide-item-text {
@@ -101,6 +104,7 @@
 
 
 * {
+   
     /* border: 1px solid red; */
 }
 /* custom transition classes */
@@ -132,7 +136,7 @@ body .father-window {
     background: var(--bg-all-window);
     width: 100%;
     justify-content: center;
-
+    position: relative;
 
     display: flex;
     justify-content: center;
@@ -172,7 +176,6 @@ body .father-window {
 .undercard-container svg:hover {transform: scale(1.1);}
 .card-container .card:nth-child(2):hover,.card-container .card:nth-child(1):hover {
     transform: translateX(5%) scale(1.1);
-    border-radius: .6rem;
 }
 .card-container .card:hover .animation-rotate-line:nth-child(1n) {
     animation: firstRotate 24s infinite linear forwards;
@@ -204,11 +207,11 @@ body .father-window {
 
 /* backgraound card  animation */
 @keyframes secondRotate {
-    100% {transform: rotateZ(-360deg);opacity: 0.5;}
+    100% {transform: rotateZ(-360deg);opacity: 0.5; filter:blur(4rem)}
     50% {filter: blur(2rem);}
 }
 @keyframes firstRotate {
-    100% {transform: rotateZ(360deg);}
+    100% {transform: rotateZ(360deg); filter: blur(4rem);}
     50% {filter: blur(2rem);}
 }
 
@@ -216,7 +219,6 @@ body .father-window {
 .card-container .card:nth-child(3):hover, .card-container .card:nth-child(4):hover {
     transform: translateX(-5%) scale(1.1);
     /* transform: scale(1.1); */
-    border-radius: .6rem;
 }
 
 [card-section] .card-container .card:hover span {
@@ -320,7 +322,7 @@ body .father-window {
 }
 
 /* Light font style */
-[card-section] .card-container .card, [card-section] .card-section-header, .background-image .inner-image-text, [image-part] .hide-image-window [expectation-part] .main-expectation-header, .text-container .expectation-grid-text span, .hide-item-text {
+[card-section] .card-container .card, [card-section] .card-section-header, .background-image .inner-image-text, [image-part] .hide-image-window [expectation-part] .main-expectation-header, .text-container .expectation-grid-text span, .hide-item-text, [contact-part] .contact-button,[contact-part] header {
     font-weight: lighter;
     /* margin: 5% 0rem 5% 0px; */
 }
@@ -455,14 +457,17 @@ body, [expectation-part] .content-container .expectation-grid-text .text-header,
     height:fit-content;
 }
 [expectation-part] .content-container .hidden-transition-image {
-    position:absolute;
+    /* position:absolute; */
     height:100%;
+    top: 0;
+    left: 0;
     transition-timing-function: ease-in-out;
     /* aspect-ratio: auto; */
 }
 [expectation-part] .content-container .text-container{
     gap:5%;
     display:flex;
+
     /* margin:0%; */
     height: auto;
     flex-direction:column;
@@ -475,9 +480,13 @@ body, [expectation-part] .content-container .expectation-grid-text .text-header,
     justify-content: center;
     align-items: center;
     position: relative;
+    /* height: 200%; */
     /* place-items:center; */
 
     /* min-width: 50%; */
+}
+.image-expectation section {
+    box-sizing: border-box;
 }
 
 
@@ -498,11 +507,11 @@ body, [expectation-part] .content-container .expectation-grid-text .text-header,
 .content-container .text-container{
     position:relative;
 }
-[expectation-part] .text-container section > p, .text-container section .svg-container{
-    font-weight:500;
+[expectation-part] .text-container section > p{
+    font-weight:400;
     margin:0;
     /* z-index: 100; */
-   
+    
     /* overflow: auto; */
 }
 .text-container section .svg-container{
@@ -535,7 +544,7 @@ body, [expectation-part] .content-container .expectation-grid-text .text-header,
 
 .hide-item-text {
     font-size: 0.4rem;
-
+    
 }
 .content-container .text-container section .expected-hide-window{
     position:absolute;
@@ -570,7 +579,7 @@ body, [expectation-part] .content-container .expectation-grid-text .text-header,
     /* bottom:0%; */
     /* position: absolute; */
     opacity:1;
-   
+    
 }
 .text-container section>p{
     grid-column:2/2;
@@ -583,20 +592,30 @@ body, [expectation-part] .content-container .expectation-grid-text .text-header,
     white-space:nowrap;
     object-fit:cover;
 }
-.daughter-container [contact-part]{
+ [contact-part]{
     display:flex;
-    flex-direction:row;
+    flex-direction:column;
     width:100%;
-    padding: 0;
-position:relative;
-   
+    margin: 0;
+    position:relative;
+
     height:fit-content;
     justify-content:center;
     align-items:center;
+    min-width:100%;
 }
-[contact-part] .contact-background-image {
-    position: relative;
-    width: 100%;
+[contact-part] > * {
+    padding: 0;
+    margin: 0;
+}
+.contact-background-image {
+    /* position: relative; */
+    background-size: cover;
+    background-position: center;
+    /* position: absolute; */
+    background-repeat: no-repeat;
+    width:100%;
+
     /* object-fit: fill; */
 } 
 
@@ -607,6 +626,51 @@ position:relative;
 .content-container .text-container section .expected-hide-window.hide-item-text{
     font-weight: 100;
     font-size: 0.4rem;
+}
+[contact-part] img + div {
+    position: absolute;
+   text-align: center;
+}
+[contact-part] header {
+    font-weight: lighter;
+}
+[contact-part] .contact-button  {
+    border: none;
+    position: relative;
+    
+    background: #000;
+    padding: 2% 4%;
+    overflow: hidden;
+    
+}
+[contact-part] div > p {
+    font-weight: 100;
+}
+.contact-button a {
+    
+    z-index: 10;
+}
+.contact-button a::before {
+    transition: all 0.5s ease;
+    display: flex;
+    justify-content: center;
+    content: 'CONTACT ME';
+    position: absolute;
+    background: white;
+    width: 200%;
+    align-items: center;
+    height: 100%;
+    text-align: start;
+    color: black;
+    pointer-events: none;
+    top: 100%;
+    left: -10%;
+    transform-origin: 50% 50%;
+    place-self: center;
+}
+.contact-button:hover  a::before {
+    top: 0;
+    width: 120%;
 }
 
 
