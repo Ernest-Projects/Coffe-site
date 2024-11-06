@@ -3,7 +3,9 @@
 /* minimum media querries */
 @media (min-width:1280px) {
     .daughter-window .grid-navbar-container p,.card-container .card #card-text {font-size: 1.3rem;}
-    .daughter-window [navbar] .grid-navbar-container p span {font-size: 1.2rem;}
+    .daughter-window [navbar] .grid-navbar-container p span, 
+    .underground-text
+    {font-size: 1.2rem;}
     [custom-coffe] .custom-container .custom-header, [card-section] .card-section-header,.background-image .main-image-text, [expectation-part] .main-expectation-header {font-size: 2.7rem;}
     [expectation-part] .content-container .text-container {gap:10%;}
     [contact-part] header,
@@ -15,6 +17,16 @@
     [custom-coffe] .custom-container .button-container .custom-button {font-size: 1.1rem;}
     .undercard-container .undercard-subtext {font-size: 1.4rem;}
     [expectation-part] .content-container .text-container section  .hide-item-text {font-size:1.9rem;}
+    .links-container p {
+        font-size: 5rem;
+    }
+    .links-container p {
+        font-size: 1.1rem;
+    }
+    .navbar-container header  {
+        font-size: 1.5rem;
+    }
+   
 }
 
 
@@ -30,6 +42,9 @@
     }
 
     [expectation-part] .content-container .text-container section  .hide-item-text {font-size: 0.9rem;}
+    .links-container p {
+        font-size: 1rem;
+    }
 }
 /* maximum media querries */
 /* max w - 1280px */
@@ -40,6 +55,15 @@
     [custom-coffe] .custom-container .custom-header, [card-section] .card-section-header, [expectation-part] .main-expectation-header {font-size: 2rem;}
     .card-container .card #card-text {font-size: 1.2rem;}
     .content-container .text-container section > p {font-size: 1.1rem;}
+    .links-container p {
+        font-size: 0.9rem;
+    }
+    .navbar-container header {
+        font-size: 1.4rem;
+    }
+    [underground-part] .underground-text {
+
+    }
 }
 /* max w - 1024px */
 @media (max-width: 1024px) {
@@ -73,6 +97,9 @@
     .content-container .text-container  section .hide-item-text {
         font-size: 1.1rem;
     }
+    .links-container p {
+        font-size: 0.8rem;
+    }
    
 
 
@@ -83,6 +110,9 @@
     [custom-coffe] .custom-container .custom-header, [card-section] .card-section-header, [image-part] .hide-image-window .hide-image-header, [contact-part] .contact-header{font-size: 1.3rem;}
     [custom-coffe] .custom-container .button-container .custom-button, .card-container .card #card-text, [card-section] .card-container .card span, [card-section] .undercard-container, [image-part] .hide-image-window .hide-image-subtext, .content-container .text-container section span, [contact-part] .contact-subtext {font-size: 0.7rem;}
     [expectation-part] .content-container .text-container section > p {font-size: 1rem;}
+    .links-container p {
+        font-size: 0.6rem;
+    }
 
    
    
@@ -91,6 +121,10 @@
     }
     [expectation-part] .main-expectation-header {
         font-size: 1.6rem;
+    }
+
+    [underground-part] .underground-text {
+        font-size: 0.7rem;
     }
 }
 /* custom properties */
@@ -322,7 +356,7 @@ body .father-window {
 }
 
 /* Light font style */
-[card-section] .card-container .card, [card-section] .card-section-header, .background-image .inner-image-text, [image-part] .hide-image-window [expectation-part] .main-expectation-header, .text-container .expectation-grid-text span, .hide-item-text, [contact-part] .contact-button,[contact-part] header {
+[card-section] .card-container .card, [card-section] .card-section-header, .background-image .inner-image-text, [image-part] .hide-image-window [expectation-part] .main-expectation-header, .text-container .expectation-grid-text span, .hide-item-text, [contact-part] .contact-button,[contact-part] header, .navbar-container header {
     font-weight: lighter;
     /* margin: 5% 0rem 5% 0px; */
 }
@@ -672,6 +706,86 @@ body, [expectation-part] .content-container .expectation-grid-text .text-header,
     top: 0;
     width: 120%;
 }
+[underground-part] {
+    background: #000;
+    position: inherit;
+    width: 100%;
+    color: var(--underground-color);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+}
+
+:root {
+    --underground-color: rgb(162, 162, 162);
+}
+ .navbar-container {
+    display: flex;
+    flex-direction: row;
+ }
+ .navbar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
+    margin: 7% 0 0% 1%;
+    
+ }
+ 
+ .navbar-container header:last-child {
+    border-right: black;
+    }
+    .navbar-container header:hover, .links-container p:hover {
+        border:1px solid white;
+        color:white;
+    }
+    .navbar-container header:last-child:hover {
+        border-left: black;
+    }
+    .navbar-container header {
+        border:1px solid transparent;
+        border-right:1px solid var(--underground-color);
+        padding:0 2%;
+        height: fit-content;
+    }
+
+.father-window .links-container {
+
+    display: flex;
+   flex-direction: row;
+    width: 100%;
+    gap:3%;
+    margin:1% 0%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+}
+.links-container p {
+    border-radius: 10rem;
+    width: 6%;
+    place-content: center;
+    max-width: 5rem;
+    border:1px solid var(--underground-color);
+    aspect-ratio:  1 / 1;
+}
+
+.links-container  a{ 
+    width: 100%;
+    height: 100%;
+    border:1px solid red;
+    padding:20% 40%;
+    text-decoration: none;
+    color:var(--underground-color);
+}
+[underground-part] .underground-text  {
+    margin: 2%;
+    color:white;
+
+}
+
+
 
 
 
