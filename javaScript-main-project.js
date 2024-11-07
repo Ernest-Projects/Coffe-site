@@ -37,8 +37,10 @@ const ExtraPixels = 17;
 const infoWindow = document.createElement('div');
 document.body.appendChild(infoWindow);
 infoWindow.className = 'info-window';
+infoWindow.textContent = 'width';
   window.addEventListener('resize', () => {
     const windowWidth = document.body.clientWidth;
-    infoWindow.textContent = `${windowWidth + ExtraPixels}`;
+    infoWindow.textContent = `${windowWidth + ExtraPixels}px`;
   });
+
   
