@@ -15,16 +15,16 @@
     .content-container .text-container section > p {font-size: 1.8rem;}
     [image-part] .hide-image-window .hide-image-subtext {font-size: 0.9rem;}
     [custom-coffe] .custom-container .button-container .custom-button {font-size: 1.1rem;}
-    .undercard-container .undercard-subtext {font-size: 1.4rem;}
+    .undercard-container .undercard-subtext,.navbar-container header {font-size: 1.4rem;}
     [expectation-part] .content-container .text-container section  .hide-item-text {font-size:1.9rem;}
+    
     .links-container p {
-        font-size: 5rem;
-    }
-    .links-container p {
-        font-size: 1.1rem;
+        font-size: 2rem;
+    width: 5%;
+
     }
     .navbar-container header  {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
    
 }
@@ -44,6 +44,8 @@
     [expectation-part] .content-container .text-container section  .hide-item-text {font-size: 0.9rem;}
     .links-container p {
         font-size: 1rem;
+    width: 5%;
+
     }
 }
 /* maximum media querries */
@@ -57,6 +59,8 @@
     .content-container .text-container section > p {font-size: 1.1rem;}
     .links-container p {
         font-size: 0.9rem;
+    width: 5%;
+
     }
     .navbar-container header {
         font-size: 1.4rem;
@@ -112,6 +116,8 @@
     [expectation-part] .content-container .text-container section > p {font-size: 1rem;}
     .links-container p {
         font-size: 0.6rem;
+    width: 7%;
+
     }
 
    
@@ -125,6 +131,9 @@
 
     [underground-part] .underground-text {
         font-size: 0.7rem;
+    }
+    .navbar-container header {
+        font-size: 1.1rem;
     }
 }
 /* custom properties */
@@ -764,7 +773,6 @@ body, [expectation-part] .content-container .expectation-grid-text .text-header,
 }
 .links-container p {
     border-radius: 10rem;
-    width: 6%;
     place-content: center;
     max-width: 5rem;
     border:1px solid var(--underground-color);
@@ -805,9 +813,11 @@ body, [expectation-part] .content-container .expectation-grid-text .text-header,
     left:0;
     width: 4rem;
     aspect-ratio:  1/ 1 ;
-    border:1px solid red;
+    border:1px solid white;
+    background: #000;
     z-index: 100;
-    color:red;
+    transition: all 0.5s ease;
+    color:white;
 }
 
 

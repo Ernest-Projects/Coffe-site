@@ -33,11 +33,12 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 });
 // to see de facto width of viewport
+const ExtraPixels = 17;
 const infoWindow = document.createElement('div');
 document.body.appendChild(infoWindow);
 infoWindow.className = 'info-window';
   window.addEventListener('resize', () => {
     const windowWidth = document.body.clientWidth;
-    infoWindow.textContent = `${windowWidth}`;
+    infoWindow.textContent = `${windowWidth + ExtraPixels}`;
   });
   
